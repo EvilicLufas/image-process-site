@@ -1,0 +1,14 @@
+#videos
+*.mp4
+temp_videos
+
+#workspaces
+*.code-workspace
+
+*.sqlite3
+
+*.log
+
+webdrivers
+
+.vscode

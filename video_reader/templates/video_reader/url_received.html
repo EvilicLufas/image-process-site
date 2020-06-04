@@ -1,0 +1,7 @@
+{% extends "video_reader/base.html" %}
+{% block content %}
+    <h1>URL Received</h1>
+    {% autoescape off %}
+        {{ html }}
+    {% endautoescape %}
+{% endblock %}
