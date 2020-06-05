@@ -22,7 +22,7 @@ class RequestHandler():
     request_url = ''
     host_site = ''
     html_response = ''
-    path = r'C:\Users\tznoo\Envs\ImageProcess\image_process_site\temp_videos\downloaded_video.mp4'
+    path = 'C:/Users/tznoo/OneDrive/Documents/Code Projects/image_process_site/temp_videos/downloaded_video.mp4'
     
     """ takes the url provided by the user and gets the proper api url and fetches a response and stores
         it in the response field 
@@ -63,13 +63,13 @@ class RequestHandler():
 
     def createVideoFile(self):
         # chromePath = r'C:/Users/tznoo/Envs/ImageProcess/image_process_site/webdrivers/chromedriver.exe'
-        firePath = r'C:/Users/tznoo/Envs/ImageProcess/image_process_site/webdrivers/geckodriver.exe'
+        firePath = 'C:/Users/tznoo/OneDrive/Documents/Code Projects/image_process_site/webdrivers/geckodriver.exe'
         #setting the useragent
         profile = webdriver.FirefoxProfile()
         profile.set_preference("general.useragent.override", "Googlebot")
         #setting the driver to be in headless mode
         options = webdriver.FirefoxOptions()
-        options.headless=True
+        options.headless=False
         #getting the webpage
         driver = webdriver.Firefox(firefox_profile=profile, options=options, executable_path=firePath)
         driver.get(self.user_url)
@@ -78,6 +78,6 @@ class RequestHandler():
         # driver.get(video.get_attribute("src")) #loads downloadable video page
         # video = driver.find_element_by_tag_name('video') #finds video on downloadable page
         resp = requests.get(video_link)
-        with open(path, 'wb') as f:
+        with open(self.path, 'wb') as f:
             f.write(resp.content)
         driver.close()

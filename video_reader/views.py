@@ -27,7 +27,7 @@ def url_received(request):
     video_url = request.session.get('video_url')
     response = RequestHandler(video_url)
     response.createVideoFile()
-    path = 'C:\\Users\\tznoo\\Envs\\ImageProcess\\image_process_site\\temp_videos\\processed_video.mp4'
+    path = 'C:\\Users\\tznoo\\OneDrive\\Documents\\Code Projects\\image_process_site\\temp_videos\\processed_video.mp4'
     VideoAnalysis(path).poseAnalysis(response.path)
     return render(request, 'video_reader/url_received.html', {'html':response.html_response})
 
