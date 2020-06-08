@@ -69,7 +69,7 @@ class RequestHandler():
         profile.set_preference("general.useragent.override", "Googlebot")
         #setting the driver to be in headless mode
         options = webdriver.FirefoxOptions()
-        options.headless=False
+        options.headless=True
         #getting the webpage
         driver = webdriver.Firefox(firefox_profile=profile, options=options, executable_path=firePath)
         driver.get(self.user_url)
