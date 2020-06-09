@@ -23,7 +23,7 @@ class FormView(View):
         form = self.form_class(request.POST['video_url'])
         if form.is_valid():
             request.session['video_url'] = form.video_url
-            return HttpResponseRedirect('/url_received/')
+            return HttpResponseRedirect('/url_rec/')
         else:
             print('did not enter valid url')
             return render(request, self.template_name, {'form':self.form_class()})
