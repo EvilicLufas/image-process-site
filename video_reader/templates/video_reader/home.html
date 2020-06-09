@@ -7,15 +7,4 @@
         <input type="submit" value="Learn"><br>
     </form>
 
-    {% if error_message %}
-    <div id="alert" onload="alertDiv()"></div>
-    {%endif%}
-
-    <script>
-        function alertDiv(){
-            document.getElementById("alert").onload = alert("{{ error_message }}")
-            document.getElementById("alert").remove()
-        }
-    </script>
-
 {% endblock %}

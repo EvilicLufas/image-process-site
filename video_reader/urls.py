@@ -1,8 +1,8 @@
 from django.contrib import admin
 from django.urls import path
-from . import views
+from .views import *
 
 urlpatterns = [
-    path('', views.home, name='home'),
-    path('url_received/', views.url_received, name='url_received')
+    path('', FormView.as_view(), name='home'),
+    path('url_rec/', ReceivedView.as_view(), name='url_rec')
 ]
