@@ -22,7 +22,7 @@ class RequestHandler():
     request_url = ''
     host_site = ''
     html_response = ''
-    path = 'C:/Users/tznoo/OneDrive/Documents/Code Projects/image_process_site/temp_videos/downloaded_video.mp4'
+    path = 'C:/Users/tznoo/OneDrive/Documents/Code Projects/image_process_site/static/temp_videos/downloaded_video.mp4'
     
     """ takes the url provided by the user and gets the proper api url and fetches a response and stores
         it in the response field 
@@ -46,7 +46,7 @@ class RequestHandler():
         try:
             self.request_url = HOST_SITE_APIS[parsed_url[1]]+user_url
         except KeyError:
-            print("API not available for the website " + user_url)
+            print("API not available for the website " + str(user_url))
     def setHTML(self):
         self.html_response = self.response.json()['html']
 

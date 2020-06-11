@@ -2,6 +2,9 @@
 *.mp4
 temp_videos
 
+#images
+video_reader/static/video_reader/images
+
 #workspaces
 *.code-workspace
 

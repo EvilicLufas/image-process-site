@@ -1,0 +1,80 @@
+html, body, .container-fluid, .row{
+    height: 100%;
+}
+#top_bar{
+    margin: none;
+    background-color: #F05E23;
+}
+.col, .col-6{
+    text-align: center;
+}
+form{
+    padding-top: 30%;
+    text-align: center;
+}
+#learn_but{
+    color: #F05E23;
+    border-color: #F05E23;
+}
+#top_bar_brand{
+    color: white;
+    font-weight: 700;
+}
+#top_bar_image{
+    padding-right: 3%;
+    height: 35px;
+}
+.video{
+    margin-top:30%;
+}
+/* #top_bar{
+    position: fixed;
+    top: 0%;
+    right:0%;
+    width: 100%;
+    height: 5%;
+    background-color: #F05E23
+}
+#top_bar_image{
+    position: absolute;
+    left: 1%;
+    top: 1%;
+    height:3%;
+}
+#ad_space_left{
+    position: absolute;
+    top:5%;
+    left:0%;
+    width: 20%;
+    height: 100%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+}
+#ad_space_right{
+    position: absolute;
+    top:5%;
+    right:0%;
+    width: 20%;
+    height: 100%;
+    border-style: solid;
+    border-width: 1px;
+    border-color:black;
+}
+#content{
+    position:absolute;
+    top:5%;
+    right:20%;
+    width: 60%;
+    height: 100%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #F05E23;
+}
+#input_form{
+    position: absolute;
+    top: 30%;
+    right: 10%;
+    width: 80%;
+    height: 6%;
+} */

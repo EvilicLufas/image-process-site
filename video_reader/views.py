@@ -37,6 +37,8 @@ class ReceivedView(View):
         video_url = request.session.get('video_url')
         response = self.form_class(video_url)
         response.createVideoFile()
-        path = 'C:\\Users\\tznoo\\OneDrive\\Documents\\Code Projects\\image_process_site\\temp_videos\\processed_video.mp4'
-        VideoAnalysis(path).poseAnalysis(response.path)
-        return render(request, self.template_name, {'html': response.html_response})
+        path = 'C:\\Users\\tznoo\\OneDrive\\Documents\\Code Projects\\image_process_site\\static\\temp_videos\\processed_video.mp4'
+        AnalObj = VideoAnalysis(path)
+        AnalObj.poseAnalysis(response.path)
+        AnalObj.changeCodec(response.path)
+        return render(request, self.template_name)

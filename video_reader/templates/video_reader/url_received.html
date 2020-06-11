@@ -1,7 +1,19 @@
 {% extends "video_reader/base.html" %}
 {% block content %}
-    <h1>URL Received</h1>
-    {% autoescape off %}
-        {{ html }}
-    {% endautoescape %}
+    <div class="row" height="100%">
+        {% load static %}
+        <div class="col">
+            <video class="video" width="384" height="683" controls autoplay loop>
+                <source src="{% static 'temp_videos/downloaded_video_1.mp4' %}" type="video/mp4">
+            </video>
+        </div>
+        <div class="col">
+            <video class="video" width="384" height="683" controls autoplay loop>
+                <source src="{% static 'temp_videos/processed_video.mp4' %}" type="video/mp4">
+            </video>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascript %}
 {% endblock %}
