@@ -1,0 +1,7 @@
+django
+beautifulsoup4
+selenium
+random_user_agent
+requests
+opencv-python
+tensorflow

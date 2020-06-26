@@ -96,4 +96,4 @@ class RequestHandler():
         resp = requests.get(video_link)
         with open(self.path, 'wb') as f:
             f.write(resp.content)
-        driver.close()
+        driver.close()      
