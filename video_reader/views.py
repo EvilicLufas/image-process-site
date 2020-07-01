@@ -4,7 +4,8 @@ from django.http import HttpResponseRedirect
 from .forms import URLForm
 from django.contrib import messages
 # from request_handler.RequestHandler import RequestHandler
-from request_handler.Request import Request
+# from request_handler.Request import Request
+from request_handler.RequestRaw import RequestRaw
 from tf_pose_estimation.VideoAnalysis import VideoAnalysis
 from django.views import View
 
@@ -30,7 +31,7 @@ class FormView(View):
             return render(request, self.template_name, {'form':self.form_class()})
 
 class ReceivedView(View):
-    form_class = Request
+    form_class = RequestRaw
     # form_class = RequestHandler
     intial = {'key':'value'}
     template_name = 'video_reader/url_received.html'
@@ -38,9 +39,10 @@ class ReceivedView(View):
     def get(self, request):
         video_url = request.session.get('video_url')
         response = self.form_class(video_url)
-        # response.createVideoFile()
-        response.get_selenium_res()
+        # response.createVideoFile() #for RequestHandler Class
+        # response.get_selenium_res() #for Request Class
+        response.download_video()
         path = 'C:\\Users\\tznoo\\OneDrive\\Documents\\Code Projects\\image_process_site\\static\\temp_videos\\processed_video.mp4'
         AnalObj = VideoAnalysis(path)
-        AnalObj.poseAnalysis(response.path)
+        AnalObj.poseAnalysis(response.PATH)
         return render(request, self.template_name)

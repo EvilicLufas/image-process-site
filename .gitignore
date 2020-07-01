@@ -12,8 +12,6 @@ video_reader/static/video_reader/images
 
 *.log
 
-webdrivers
-
 .vscode
 
-swigwin-4.0.2
+*.bat
