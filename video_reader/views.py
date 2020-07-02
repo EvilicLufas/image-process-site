@@ -42,7 +42,7 @@ class ReceivedView(View):
         # response.createVideoFile() #for RequestHandler Class
         # response.get_selenium_res() #for Request Class
         response.download_video()
-        path = 'C:\\Users\\tznoo\\OneDrive\\Documents\\Code Projects\\image_process_site\\static\\temp_videos\\processed_video.mp4'
+        path = 'C:\\Users\\tznoo\\Dev\\image_process_site\\static\\temp_videos\\processed_video.mp4'
         AnalObj = VideoAnalysis(path)
         AnalObj.poseAnalysis(response.PATH)
         return render(request, self.template_name)

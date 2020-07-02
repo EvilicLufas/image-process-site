@@ -23,7 +23,7 @@ import requests
 #often gets blocked by tiktok
 class Request:
     selenium_retries = 0
-    path = 'C:/Users/tznoo/OneDrive/Documents/Code Projects/image_process_site/static/temp_videos/downloaded_video.mp4'
+    path = 'C:/Users/tznoo/Dev/image_process_site/static/temp_videos/downloaded_video.mp4'
 
     def __init__(self, url, driver_type = 'firefox'):
         self.url = url

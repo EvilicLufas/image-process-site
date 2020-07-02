@@ -34,7 +34,7 @@ class RequestHandler():
     request_url = ''
     host_site = ''
     html_response = ''
-    path = 'C:/Users/tznoo/OneDrive/Documents/Code Projects/image_process_site/static/temp_videos/downloaded_video.mp4'
+    path = 'C:/Users/tznoo/Dev/image_process_site/static/temp_videos/downloaded_video.mp4'
     selenium_retries=0
     
     """ takes the url provided by the user and gets the proper api url and fetches a response and stores
@@ -76,7 +76,7 @@ class RequestHandler():
 
     def createVideoFile(self):
         # chromePath = 'C:/Users/tznoo/OneDrive/Documents/Code Projects/image_process_site/webdrivers/chromedriver.exe'
-        firePath = 'C:/Users/tznoo/OneDrive/Documents/Code Projects/image_process_site/webdrivers/geckodriver.exe'
+        firePath = 'C:/Webdrivers/geckodriver.exe'
         #setting the useragent
         profile = webdriver.FirefoxProfile()
         profile.set_preference("general.useragent.override", "Googlebot")

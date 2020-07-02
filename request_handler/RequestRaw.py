@@ -2,7 +2,7 @@ import requests
 
 #Class that takes the raw video src link from video attribute and downloads the video
 class RequestRaw:
-    PATH = 'C:/Users/tznoo/OneDrive/Documents/Code Projects/image_process_site/static/temp_videos/downloaded_video.mp4'
+    PATH = 'C:/Users/tznoo/Dev/image_process_site/static/temp_videos/downloaded_video.mp4'
 
     def __init__(self,url,driver_type = 'firefox'):
         self.url = url
