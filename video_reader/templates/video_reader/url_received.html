@@ -3,17 +3,15 @@
     <div class="row" height="100%">
         {% load static %}
         <div class="col">
-            <video class="video" width="384" height="683" controls autoplay loop>
-                <source src="{% static 'temp_videos/downloaded_video.mp4' %}" type="video/mp4">
-            </video>
+            <div id = "video" data-status="{{status}}"> 
+            </div>
         </div>
         <div class="col">
-            <video class="video" width="384" height="683" controls autoplay loop>
-                <source src="{% static 'temp_videos/processed_video.mp4' %}" type="video/mp4">
-            </video>
+            <div id="video_one"></div>
         </div>
     </div>
 {% endblock %}
 
 {% block javascript %}
+<script src="{% static 'js/video_panel.js'%}" type="text/babel"></script>
 {% endblock %}

@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     {% load static %}
-    <link rel="stylesheet" href = "{% static 'video_reader/styles.css'%}">
+    <link rel="stylesheet" href = "{% static 'css/styles.css'%}">
     <title>Dance Video Analyzer</title>
 </head>
 <body>
     <div class="container-fluid">
         <div class = "navbar fixed-top navbar-light" id = "top_bar">
             <a id="top_bar_brand" class="navbar-brand" href="localhost:8000/">
-                <image id="top_bar_image" src="{% static 'video_reader/images/dance_logo_cropped.png' %}" alt=""/>    
+                <image id="top_bar_image" src="{% static 'images/dance_logo_cropped.png' %}" alt=""/>    
                 Dance Video Analyzer
             </a>
         </div>
@@ -29,17 +29,8 @@
     <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
     <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script> 
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
-    <!-- <script>
-        class TopBar extends React.Component(){
-            render(){
-                <a href="localhost:8000/">
-                    <image id="top_bar_image" src="{% static 'video_reader/images/dance_logo.png' %}" alt=""/>    
-                </a>
-            }
-        }
-        const element = <TopBar/>
-        ReactDOM.render(element, document.getElementById('top_bar'));
-    </script> -->
+    <!-- adding ability to use JSX with React-->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     {% block javascript %}
     
     {% endblock %}
