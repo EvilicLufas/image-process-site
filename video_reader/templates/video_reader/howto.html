@@ -1,0 +1,19 @@
+{% extends "video_reader/base.html" %}
+{% block content %}
+    <div class="row" id="mainrow" height="100%">
+        <div class="col" width ="100%">
+            {% load static %}
+            <img class="howtoimg" src ="{% static 'images/howto1.png' %}">
+            <p class="how_to_text">Left click on video that you want to analyze and select copy address</p>
+            <img class="howtoimg" src ="{% static 'images/howto2.png' %}">
+            <p class="how_to_text">Find the html video tag</p>
+            <img class="howtoimg" src ="{% static 'images/howto3.png' %}">
+            <p class="how_to_text">Left click and select copy address</p>
+            <img class="howtoimg" src ="{% static 'images/howto4.png' %}">
+            <p class="how_to_text">Paste the link into the form and click learn to start the video analysis</p>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascript %}
+{% endblock %}

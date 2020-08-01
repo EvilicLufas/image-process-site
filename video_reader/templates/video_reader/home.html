@@ -4,8 +4,13 @@
     <form  id="input_form" action="" method="post">
         {% csrf_token %}
         {{ form }}<br>
-        <input id="learn_but" class="btn btn-outline-dark" type="submit" value="Learn"><br>
+        <input id="learn_but" class="btn btn-outline-dark" type="submit" value="Learn" onclick="alert('Your Video will be processed, This usually takes a few minutes')"><br>
     </form>
 {% endblock %}
 
-<!-- add react to javascript-->
+
+{% block javascript %}
+    <script>
+        // document.getElementById("learn_but").onclick = alert("Your Video is Processing, This usually takes a few minutes");
+    </script>
+{% endblock %}

@@ -125,7 +125,8 @@ STATICFILES_DIRS=[os.path.join(BASE_DIR,"static"),
 
 CASHES = {
     'default': {
-        'BACKEND':'django.core.cache.backends.memcached.MemcachedCache',
-        'LOCATION':'127.0.0.1:11211'
+        'BACKEND':'django.core.cache.backends.filebased.FileBasedCashe',
+        'LOCATION':'C:/Users/tznoo/Dev/image_process_site/static/temp_django_cache',
+        'TIMEOUT': 60*15 #Items will be deleted from cache after 15 minutes
     }
 }

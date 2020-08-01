@@ -9,13 +9,10 @@ from django.contrib import messages
 from request_handler.RequestRaw import RequestRaw
 from tf_pose_estimation.VideoAnalysis import VideoAnalysis
 from django.views import View
+from queue import Queue
 import threading
 import time
 
-
-#figure out how to make processing page
-#apply pose estimation and change video speed (look into changing video speed dynamcially)
-#bring pose estimated video and original video into webpage to play.
 
 class FormView(View):
     form_class = URLForm
@@ -34,32 +31,31 @@ class FormView(View):
             print('did not enter valid url')
             return render(request, self.template_name, {'form':self.form_class()})
 
+
 class ReceivedView(View):
     form_class = RequestRaw
     # form_class = RequestHandler
-    intial = {'key':'value'}
-    template_name = 'video_reader/url_received.html'
+    template_processed = 'video_reader/analyzed.html'
 
     def get(self, request):
-        # steps = [False, False]
-        # anal_thread = threading.Thread(target=self.analyze, args=(request,steps))
-        # anal_thread.start()
-        HttpResponse(render(request, self.template_name, {'status':"downloading_video"}))
-        time.sleep(5)
-        return render(request, self.template_name, {'status':"processing_video"})
+        context = self.analyze(request)
+        return render(request, self.template_processed, context)
 
-        
-
-    def analyze(self, request, steps):
-        print("\n in separate thread \n")
+    def analyze(self, request):
+        videoIDs = {}
         video_url = request.session.get('video_url')
-        response = self.form_class(video_url)
+        response = self.form_class(video_url, videoIDs)
         # response.createVideoFile() #for RequestHandler Class
         # response.get_selenium_res() #for Request Class
-        response.download_video()
-        steps[0] = True
-        path = 'C:\\Users\\tznoo\\Dev\\image_process_site\\static\\temp_videos\\processed_video.mp4'
+        id = response.download_video()
+        path = 'C:/Users/tznoo/Dev/image_process_site/static/temp_videos/processed_video.mp4'
         AnalObj = VideoAnalysis(path)
-        AnalObj.poseAnalysis(response.PATH)
-        steps[1] = True
-        print("\n thread finishing \n")
+        proc_id = AnalObj.poseAnalysis(id, response.PATH) #this returns the id for the processed video that's created
+        return {"downloaded":response.PATH[45:],"processed":AnalObj.path[45:]}
+
+
+class HowToView(View):
+    template = 'video_reader/howto.html'
+
+    def get(self, request):
+        return render(request, self.template)

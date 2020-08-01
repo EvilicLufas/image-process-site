@@ -14,11 +14,11 @@ class VideoPanel extends React.Component {
         console.log("checking state")
         console.log(document.getElementById('video').getAttribute("data-status"));
         if (document.getElementById('video').getAttribute("data-status") == "downloading_video"){
-            console.log("entered first");
             this.setState({status:'Downloading Video'});
         } else if (document.getElementById('video').getAttribute("data-status") == "processing_video"){
-            console.log("entered second");
             this.setState({status:'Processing Video'});
+        } else if (document.getElementById('video').getAttribute("data-status") == "analyzed"){
+            this.setState({status:'Video Analayzed'});
         } else {
             this.setState({status:'Completed'});
             clearInterval(this.timerID);

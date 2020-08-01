@@ -24,14 +24,33 @@ form{
     padding-right: 3%;
     height: 35px;
 }
-.video{
-    margin-top:30%;
+#mainrow{
+    margin-top : 15%
+}
+.howtoimg{
+    width : 100%
+}
+Video{
+    margin-top:20%;
 }
 h1 {
     text-align: center;
     margin-top: 50%;
 }
-/* #top_bar{
+#how_to_link {
+    color: white;
+    font-weight: 300;
+}
+#how_to_link:hover { 
+    color: white;
+    font-weight: 300;
+}
+.how_to_text {
+    padding-bottom: 7%;
+    text-align: left;
+
+}
+/* #top_bar{f
     position: fixed;
     top: 0%;
     right:0%;
