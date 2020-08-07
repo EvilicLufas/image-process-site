@@ -3,12 +3,12 @@
     <div class="row" id="mainrow" height=100%>
         {% load static %}
         <div class="col">
-            <Video id ="downloaded_video" width = 80% controls autoplay>
+            <Video id ="downloaded_video" width = 80% controls autoplay loop>
                 <source src="{% static downloaded %}" type = "video/mp4">
             </Video>
         </div>
         <div class="col">
-            <Video id ="processed_video" width = 80% controls autoplay>
+            <Video id ="processed_video" width = 80% controls autoplay loop>
                 <source src="{% static processed %}" type = "video/mp4">
             </Video>
         </div>

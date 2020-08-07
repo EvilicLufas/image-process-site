@@ -6,6 +6,7 @@ from .forms import URLForm
 from django.contrib import messages
 # from request_handler.RequestHandler import RequestHandler
 # from request_handler.Request import Request
+from request_handler.VideoManager import VideoManager
 from request_handler.RequestRaw import RequestRaw
 from tf_pose_estimation.VideoAnalysis import VideoAnalysis
 from django.views import View
@@ -38,10 +39,12 @@ class ReceivedView(View):
     template_processed = 'video_reader/analyzed.html'
 
     def get(self, request):
-        context = self.analyze(request)
+        video_man = VideoManager()
+        context = self.analyze(request, video_man)
+        video_man.start()
         return render(request, self.template_processed, context)
 
-    def analyze(self, request):
+    def analyze(self, request, video_man):
         videoIDs = {}
         video_url = request.session.get('video_url')
         response = self.form_class(video_url, videoIDs)
@@ -51,6 +54,8 @@ class ReceivedView(View):
         path = 'C:/Users/tznoo/Dev/image_process_site/static/temp_videos/processed_video.mp4'
         AnalObj = VideoAnalysis(path)
         proc_id = AnalObj.poseAnalysis(id, response.PATH) #this returns the id for the processed video that's created
+        video_man.addVideo(response.PATH[57:])
+        video_man.addVideo(AnalObj.path[57:])
         return {"downloaded":response.PATH[45:],"processed":AnalObj.path[45:]}
 
 
